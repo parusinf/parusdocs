@@ -8,3 +8,7 @@
 
 * [Табель посещаемости](docs/tabel_poseschaemosti.md)
 * [Оплата банковской картой](docs/oplata_bankovskoy_kartoy.md)
+
+## Общие
+
+* [Смена пароля](docs/smena_parolia.md)
