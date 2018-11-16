@@ -2,9 +2,9 @@
 
 > _**Парус** поддерживает формирование отчётов в безплатный офисный пакет **LibreOffice** вместо платного **Microsoft Office**. **LibreOffice** поддерживает в том числе форматы **Microsoft Office**._
 
-1. Скачайте [**LibreOffice_6.0.5_Win_x64.msi**](http://download.documentfoundation.org/libreoffice/stable/6.0.5/win/x86_64/LibreOffice_6.0.5_Win_x64.msi) для 64-разрядной операционной системы _либо_ [**LibreOffice_6.0.5_Win_x86.msi**](http://download.documentfoundation.org/libreoffice/stable/6.0.5/win/x86/LibreOffice_6.0.5_Win_x86.msi) для 32-разрядной.
+1. Скачайте [**LibreOffice_6.1.3_Win_x64.msi**](http://download.documentfoundation.org/libreoffice/stable/6.1.3/win/x86_64/LibreOffice_6.1.3_Win_x64.msi) для 64-разрядной операционной системы _либо_ [**LibreOffice_6.1.3_Win_x86.msi**](http://download.documentfoundation.org/libreoffice/stable/6.1.3/win/x86/LibreOffice_6.1.3_Win_x86.msi) для 32-разрядной. На сегодняний день это может быть может более новая версия. В таком случае скачайте последнюю версию **LibreOffice** на странице загрузки [**https://ru.libreoffice.org/download/**](https://ru.libreoffice.org/download/)
 
-> _Разрядность операционной системы можно посмотреть в свойствах компьютера: на рабочем столе **Компьютер**, правая кнопка мыши, **Свойства**, параметр **Тип системы**. Последнюю версию **LibreOffice** можно скачать на странице загрузки [https://ru.libreoffice.org/download/](https://ru.libreoffice.org/download/)_.
+> _Разрядность операционной системы можно посмотреть в свойствах компьютера: на рабочем столе **Компьютер**, правая кнопка мыши, **Свойства**, параметр **Тип системы**._.
 
 2. Установите _LibreOffice*.msi_.
 
