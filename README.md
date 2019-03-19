@@ -1,14 +1,18 @@
 # Инструкции по ПП Парус 8
 
-## Бухгалтерский учёт
+## Подушевое финансирование в образовании
 
-* [Заявки на финансирование](docs/zayavki_na_finansirovanie.md)
+* [Количество ставок штатной должности на дату](docs/kolvo_stavok.md)
 
 ## Расчёт оплаты услуг учреждения
 
 * [Табель посещаемости](docs/tabel_poseschaemosti.md)
 * [Рабочие календари](docs/rabochie_kalendari.md)
 * [Оплата банковской картой](docs/oplata_bankovskoy_kartoy.md)
+
+## Бухгалтерский учёт
+
+* [Заявки на финансирование](docs/zayavki_na_finansirovanie.md)
 
 ## Общие
 
