@@ -20,3 +20,4 @@
 
 * [Смена пароля](docs/smena_parolia.md)
 * [Печать в LibreOffice](docs/libreoffice.md)
+* [Установка системы управления Парус](docs/ustanovka_parus.md)
