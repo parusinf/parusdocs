@@ -3,7 +3,7 @@
 1. Скачайте дистрибутивы клиентов Парус и Oracle [OracleParusClient.zip](https://yadi.sk/d/Sf9Vg0cM6xw3pw).
 2. Разархивируйте [OracleParusClient.zip](https://yadi.sk/d/Sf9Vg0cM6xw3pw) в `C:\`. Должно быть `C:\Oracle` и `C:\Parus`.
 3. Запустите `C:\Oracle\instantclient11-install.cmd` от имени локального администратора (правая кнопка мыши, Запуск от имени администратора).
-4. Установите `C:\Parus\ParusClient.msi` в `C:\Parus`.
+4. Запустите `C:\Parus\ParusClient.msi`. Укажите каталог установки `C:\Parus`, остальные параметры при установке не указывайте.
 5. Удалите иностранные антивирусы.
 6. Устанавите безплатный отечественный антивирус [Kaspersky Free](https://www.kaspersky.ru/free-antivirus).
 7. Закрепите ярлык **Система управления ПАРУС 8.5.6.1** на панели задач.
