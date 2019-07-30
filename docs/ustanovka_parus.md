@@ -1,7 +1,7 @@
 # Установка системы управления Парус
 
-1. Скачайте дистрибутивы клиентов Парус и Oracle [OracleParusClient.zip](https://yadi.sk/d/Sf9Vg0cM6xw3pw).
-2. Разархивируйте [OracleParusClient.zip](https://yadi.sk/d/Sf9Vg0cM6xw3pw) в `C:\`. Должно быть `C:\Oracle` и `C:\Parus`.
+1. Скачайте дистрибутивы клиентов Парус и Oracle [ПарусБалашиха.zip](https://yadi.sk/d/R9dFKBj0JBJvEA) или [ПарусКоролёв.zip](https://yadi.sk/d/fg2NYknKkZAikA).
+2. Разархивируйте архив в `C:\`. Должно быть `C:\Oracle` и `C:\Parus`.
 3. Запустите `C:\Oracle\instantclient11-install.cmd` от имени локального администратора (правая кнопка мыши, Запуск от имени администратора).
 4. Запустите `C:\Parus\ParusClient.msi`. Укажите каталог установки `C:\Parus`, остальные параметры при установке не указывайте.
 5. Удалите иностранные антивирусы.
