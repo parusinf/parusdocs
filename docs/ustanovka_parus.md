@@ -3,7 +3,13 @@
 ## Установка
 1. Скачайте дистрибутивы клиентов Парус и Oracle [ПарусБалашиха.zip](https://yadi.sk/d/R9dFKBj0JBJvEA) или [ПарусКоролёв.zip](https://yadi.sk/d/fg2NYknKkZAikA).
 2. Разархивируйте архив `zip` в корень диска `C:\`. Должно быть **`C:\Oracle`** и **`C:\Parus`**.
+
+![Должно быть C:\Oracle и C:\Parus](images/c_oracle_parus.png)
+
 3. Запустите `C:\Oracle\instantclient11-install.cmd` от имени локального администратора (правая кнопка мыши, **Запуск от имени администратора**).
+
+![Установка клиента Oracle](images/instantclient11-install.png)
+
 4. Запустите `C:\Parus\ParusClient.msi`. Укажите каталог установки `C:\Parus`, нажав на кнопку **Обзор**.
 
 ![Смена пароля](images/papka_naznachenia.png)
