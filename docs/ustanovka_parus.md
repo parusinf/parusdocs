@@ -1,7 +1,7 @@
 # Установка рабочего места Парус
 
 ## Установка
-1. Скачайте дистрибутив [ПарусБалашиха.zip](https://yadi.sk/d/R9dFKBj0JBJvEA) или [ПарусКоролёв.zip](https://yadi.sk/d/fg2NYknKkZAikA).
+1. Скачайте дистрибутив [ПарусБалашиха.zip](https://yadi.sk/d/R9dFKBj0JBJvEA) или [ПарусКоролёв.zip](https://yadi.sk/d/fg2NYknKkZAikA) с каталогом `Parus` внутри.
 2. Разархивируйте архив `zip` в корень диска `C:\`. Должно быть **`C:\Parus`**.
 
 ![Должно быть C:\Oracle и C:\Parus](images/c_parus.png)
