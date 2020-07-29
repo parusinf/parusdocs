@@ -2,11 +2,11 @@
 
 > _**Парус** поддерживает формирование отчётов в безплатный офисный пакет **LibreOffice** вместо платного **Microsoft Office**. **LibreOffice** поддерживает в том числе форматы **Microsoft Office**._
 
-1. Скачайте [**LibreOffice_6.4.2_Win_x64.msi**](http://download.documentfoundation.org/libreoffice/stable/6.4.2/win/x86_64/LibreOffice_6.4.2_Win_x64.msi) для 64-разрядной операционной системы _либо_ [**LibreOffice_6.4.2_Win_x86.msi**](http://download.documentfoundation.org/libreoffice/stable/6.4.2/win/x86/LibreOffice_6.4.2_Win_x86.msi) для 32-разрядной. На сегодняшний день может быть более новая версия [**https://ru.libreoffice.org/download/**](https://ru.libreoffice.org/download/)
+1. Скачайте [**LibreOffice_6.4.5_Win_x64.msi**](http://download.documentfoundation.org/libreoffice/stable/6.4.5/win/x86_64/LibreOffice_6.4.5_Win_x64.msi) для 64-разрядной операционной системы _либо_ [**LibreOffice_6.4.5_Win_x86.msi**](http://download.documentfoundation.org/libreoffice/stable/6.4.5/win/x86/LibreOffice_6.4.5_Win_x86.msi) для 32-разрядной. На сегодняшний день может быть более новая версия [**https://ru.libreoffice.org/download/**](https://ru.libreoffice.org/download/)
 
 > _Разрядность операционной системы можно посмотреть в свойствах компьютера: на рабочем столе **Компьютер**, правая кнопка мыши, **Свойства**, параметр **Тип системы**._.
 
-2. Запустите **LibreOffice_6.4.2_Win_x64.msi** и следуйте инструкциям программы установки.
+2. Запустите **LibreOffice_6.4.5_Win_x64.msi** и следуйте инструкциям программы установки.
 
 3. Запустите любое приложение **Парус**.
 4. Откройте меню **Файл, Сервис, Параметры**. На форме отбора нажмите кнопку **OK**.
