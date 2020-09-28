@@ -2,9 +2,7 @@
 
 > _**Парус** поддерживает формирование отчётов в безплатный офисный пакет **LibreOffice** вместо платного **Microsoft Office**. **LibreOffice** поддерживает в том числе форматы **Microsoft Office**._
 
-1. Скачайте [**LibreOffice_7.0.0_Win_x64.msi**](http://download.documentfoundation.org/libreoffice/stable/7.0.0/win/x86_64/LibreOffice_7.0.0_Win_x64.msi) для 64-разрядной операционной системы _либо_ [**LibreOffice_7.0.0_Win_x86.msi**](http://download.documentfoundation.org/libreoffice/stable/7.0.0/win/x86/LibreOffice_7.0.0_Win_x86.msi) для 32-разрядной. На сегодняшний день может быть более новая версия [**https://ru.libreoffice.org/download/**](https://ru.libreoffice.org/download/)
-
-> _Разрядность операционной системы можно посмотреть в свойствах компьютера: на рабочем столе **Компьютер**, правая кнопка мыши, **Свойства**, параметр **Тип системы**._.
+1. Скачайте LibreOffice [**https://ru.libreoffice.org/download/**](https://ru.libreoffice.org/download/)
 
 2. Запустите **LibreOffice_7.0.0_Win_x64.msi** и следуйте инструкциям программы установки.
 
