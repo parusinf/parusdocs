@@ -116,3 +116,5 @@
 5. Выгрузите заполненный табель группы из приложения в `CSV файл`.
 6. Передайте `CSV файл` на компьютер (например, через почту или WhatsApp).
 7. Загрузите `CSV файл` в Парус: **Учёт, Табель посещаемости**, правая кнопка мыши, **Обмен, Импорт из файл**, укажите `CSV файл` на компьютере, который нужно загрузить, пользовательская процедура **ЗагрузкаТабеля**.
+
+> _Серверные объекты процедур импорта и экспорта `CSV файлов` табелей посещаемости: [https://raw.githubusercontent.com/parusinf/parusdocs/master/docs/assembly/parus_load_unload.sql](https://raw.githubusercontent.com/parusinf/parusdocs/master/docs/assembly/parus_load_unload.sql)_

@@ -9,7 +9,7 @@
 
 ## Расчёт оплаты услуг учреждения
 
-* [Табель посещаемости](docs/tabel_poseschaemosti.md)
+* [Табели посещаемости](docs/tabel_poseschaemosti.md)
 * [Рабочие календари](docs/rabochie_kalendari.md)
 * [Оплата банковской картой](docs/oplata_bankovskoy_kartoy.md)
 
