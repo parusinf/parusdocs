@@ -44,6 +44,31 @@ end;
 /
 show errors;
 
+create or replace function UDO_F_S2N
+(
+  sNUMBER         in varchar2           -- строка с числом
+)
+return number deterministic -- null в случае ошибки преобразования
+as
+  nRESULT                      number;
+  sNUMBER_                     PKG_STD.tSTRING := replace(substr(trim(sNUMBER), 1, 40), ' ', '');
+begin
+  begin
+    nRESULT := to_number(replace(sNUMBER_, ',', '.'));
+  exception
+    when others then
+      begin
+        nRESULT := to_number(replace(sNUMBER_, '.', ','));
+      exception
+        when others then
+          null;
+      end;
+  end;
+  return nRESULT;
+end;
+/
+show errors;
+
 create or replace function UDO_F_S2D
 -- Преобразование строки в дату
 (
@@ -74,21 +99,21 @@ begin
         sDATE_ := substr(sDATE_, 1, length(sDATE_) - 1);
       end if;
 
-      nDAY   := F_PAN_S2N(substr(sDATE_, 1, 2));
-      nMONTH := F_PAN_S2N(substr(sDATE_, 4, 2));
-      nYEAR  := F_PAN_S2N(substr(sDATE_, 7, 4));
+      nDAY   := UDO_F_S2N(substr(sDATE_, 1, 2));
+      nMONTH := UDO_F_S2N(substr(sDATE_, 4, 2));
+      nYEAR  := UDO_F_S2N(substr(sDATE_, 7, 4));
     -- DD.MM.YY
     elsif length(sDATE_) = 8 then
-      nDAY   := F_PAN_S2N(substr(sDATE_, 1, 2));
-      nMONTH := F_PAN_S2N(substr(sDATE_, 4, 2));
-      nYEAR  := F_PAN_S2N(substr(sDATE_, 7, 2));
+      nDAY   := UDO_F_S2N(substr(sDATE_, 1, 2));
+      nMONTH := UDO_F_S2N(substr(sDATE_, 4, 2));
+      nYEAR  := UDO_F_S2N(substr(sDATE_, 7, 2));
     end if;
 
   -- YYYY
   elsif length(sDATE_) <= 4 then
     nDAY   := 1;
     nMONTH := 1;
-    nYEAR  := F_PAN_S2N(sDATE_);
+    nYEAR  := UDO_F_S2N(sDATE_);
 
   -- MONTH YYYY
   else
@@ -122,7 +147,7 @@ begin
       nMONTH := 12;
     end if;
 
-    nYEAR  := F_PAN_S2N(sYEAR);
+    nYEAR  := UDO_F_S2N(sYEAR);
   end if;
 
   -- YY -> YYYY
@@ -145,31 +170,6 @@ begin
   end;
 
   return dDATE;
-end;
-/
-show errors;
-
-create or replace function UDO_F_S2N
-(
-  sNUMBER         in varchar2           -- строка с числом
-)
-return number deterministic -- null в случае ошибки преобразования
-as
-  nRESULT                      number;
-  sNUMBER_                     PKG_STD.tSTRING := replace(substr(trim(sNUMBER), 1, 40), ' ', '');
-begin
-  begin
-    nRESULT := to_number(replace(sNUMBER_, ',', '.'));
-  exception
-    when others then
-      begin
-        nRESULT := to_number(replace(sNUMBER_, '.', ','));
-      exception
-        when others then
-          null;
-      end;
-  end;
-  return nRESULT;
 end;
 /
 show errors;
