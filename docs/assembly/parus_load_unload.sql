@@ -321,10 +321,6 @@ begin
       sORG_CODE      := UDO_F_GET_LIST_ITEM(sLINE, 1, ';');
       sORG_INN       := UDO_F_GET_LIST_ITEM(sLINE, 2, ';');
 
-      if sORG_INN is null then
-        P_EXCEPTION(0, 'Не задан ИНН организации.');
-      end if;
-
       begin
         select O.RN
           into nORG_RN
