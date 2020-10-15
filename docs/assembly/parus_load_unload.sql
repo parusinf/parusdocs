@@ -328,14 +328,12 @@ begin
       begin
         select O.RN
           into nORG_RN
-          from PSORG O,
-               AGNLIST A
+          from PSORG O
          where O.COMPANY = nCOMPANY
-           and O.AGENT = A.RN
-           and A.AGNIDNUMB = sORG_INN;
+           and O.CODE = sORG_CODE;
       exception
         when NO_DATA_FOUND then
-          P_EXCEPTION(0, 'Организация с ИНН %s не найдена.', sORG_INN);
+          P_EXCEPTION(0, 'Организация "%s" не найдена.', sORG_CODE);
       end;
 
     -- Группа
@@ -350,7 +348,7 @@ begin
            and G.CODE = sGROUP_CODE;
       exception
         when NO_DATA_FOUND then
-          P_EXCEPTION(0, 'Организация с ИНН %s не найдена.', sORG_INN);
+          P_EXCEPTION(0, 'Группа "%s" не найдена.', sGROUP_CODE);
       end;
 
       -- Проверка прав доступа
