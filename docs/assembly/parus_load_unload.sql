@@ -229,11 +229,8 @@ create or replace procedure UDO_P_PSORGGRP_LOAD
 )
 as
   cDATA           clob;
-  nOFFSET         binary_integer := 1;
   sLINE           varchar2(32767);
-  nCLOB_LENGTH    binary_integer;
-  sLINE_LENGTH    binary_integer;
-  nLINE_NUMBER    binary_integer := 0;
+  nLINE_NUMBER    binary_integer := 1;
   dPERIOD         date;
   sAGNFAMILYNAME  PKG_STD.tSTRING;
   sAGNFIRSTNAME   PKG_STD.tSTRING;
@@ -267,45 +264,19 @@ as
   sORG_INN        PKG_STD.tSTRING;
   sGROUP_CODE     PKG_STD.tSTRING;
   sPERION         PKG_STD.tSTRING;
-
-begin
-  -- Тип часа
+  l_amount        pls_integer := 1;
+  l_length        pls_integer;
+  token           varchar2(4000);
+  sobch           varchar2(4000);
+  
+  -- Обработка строки файла
+  procedure PERFORM_LINE
+  (
+    nLINE_NUMBER  in number,
+    sLINE         in varchar2
+  )
+  as
   begin
-    select T.RN,
-           T.CODE
-      into nHOURSTYPE,
-           sHOURSTYPE
-      from SL_HOURS_TYPES T
-     where T.BASE_SIGN = 1
-       and substr(upper(T.SHORT_CODE), 1, 1) = 'Д';
-  exception
-    when NO_DATA_FOUND then
-      P_EXCEPTION(0, 'Основной тип часа с кодом Д не найден.');
-  end;
-
-  -- Загрузка файла из буфера
-  begin
-    select B.DATA
-      into cDATA
-      from FILE_BUFFER B
-     where B.IDENT = nIDENT;
-  exception
-    when NO_DATA_FOUND then
-      P_EXCEPTION(0, 'Должен быть загружен CSV файл в файловый буфер.');
-    when TOO_MANY_ROWS then
-      P_EXCEPTION(0, 'Должен быть загружен только один CSV файл в файловый буфер.');
-  end;
-
-  -- Обработка файла
-  nCLOB_LENGTH := length(cDATA);
-  while nOFFSET <= nCLOB_LENGTH loop
-    sLINE_LENGTH := instr(cDATA, chr(10), nOFFSET) - nOFFSET;
-    if sLINE_LENGTH < 0 then
-      sLINE_LENGTH := nCLOB_LENGTH + 1 - nOFFSET;
-    end if;
-    sLINE := substr(cDATA, nOFFSET, sLINE_LENGTH);
-    nLINE_NUMBER := nLINE_NUMBER + 1;
-
     -- Текущий период
     if nLINE_NUMBER = 1 then
       sPERION := UDO_F_GET_LIST_ITEM(sLINE, 1, ';');
@@ -385,15 +356,15 @@ begin
            and C.AGENT = A.RN
            and A.AGNFAMILYNAME = sAGNFAMILYNAME
            and A.AGNFIRSTNAME = sAGNFIRSTNAME
-           and cmp_vc2(A.AGNLASTNAME, SAGNLASTNAME) = 1
+           and cmp_vc2(A.AGNLASTNAME, sAGNLASTNAME) = 1
            and cmp_dat(A.AGNBURN, dAGNBURN) = 1;
       exception
         when NO_DATA_FOUND then
           nERROR_COUNT := nERROR_COUNT + 1;
-          sMESSAGE := sMESSAGE||FORMAT_TEXT('%s. %s %s %s %s не найдена.'||chr(10),
-            nERROR_COUNT, sAGNFAMILYNAME, sAGNFIRSTNAME, nvl(SAGNLASTNAME, '(без отчества)'),
-            nvl(dAGNBURN, '(без даты рождения)'));
-          continue;
+          sMESSAGE := substr(sMESSAGE||FORMAT_TEXT('%s. %s %s %s %s не найден(а).'||chr(10),
+            to_char(nERROR_COUNT), sAGNFAMILYNAME, sAGNFIRSTNAME, sAGNLASTNAME,
+            to_char(dAGNBURN, 'dd.mm.yyyy')), 1, 4000);
+          return;
       end;
 
       -- Посещаемость по дням
@@ -438,11 +409,59 @@ begin
       end loop;
       nLOAD_COUNT := nLOAD_COUNT + 1;
     end if;
+  end;  
 
-    nOFFSET := nOFFSET + sLINE_LENGTH + 1;
+begin
+  -- Тип часа
+  begin
+    select T.RN,
+           T.CODE
+      into nHOURSTYPE,
+           sHOURSTYPE
+      from SL_HOURS_TYPES T
+     where T.BASE_SIGN = 1
+       and substr(upper(T.SHORT_CODE), 1, 1) = 'Д';
+  exception
+    when NO_DATA_FOUND then
+      P_EXCEPTION(0, 'Основной тип часа с кодом Д не найден.');
+  end;
+
+  -- Загрузка файла из буфера
+  begin
+    select B.DATA
+      into cDATA
+      from FILE_BUFFER B
+     where B.IDENT = nIDENT;
+  exception
+    when NO_DATA_FOUND then
+      P_EXCEPTION(0, 'Должен быть загружен CSV файл в файловый буфер.');
+    when TOO_MANY_ROWS then
+      P_EXCEPTION(0, 'Должен быть загружен только один CSV файл в файловый буфер.');
+  end;
+
+  -- Обработка файла
+  l_length := dbms_lob.getlength(cDATA);
+  for i in 1..l_length loop
+    DBMS_LOB.READ
+    (
+      LOB_LOC => cDATA,
+      AMOUNT => l_amount,
+      OFFSET => i,
+      BUFFER => token
+    );
+    if token = chr(10) then
+      PERFORM_LINE(nLINE_NUMBER, sobch);
+      nLINE_NUMBER := nLINE_NUMBER + 1;
+      sobch:= null;
+    elsif i = l_length then
+      sobch:= sobch||token;
+      PERFORM_LINE(nLINE_NUMBER, sobch);
+    else
+      sobch:= sobch||token;
+    end if;
   end loop;
 
-  sMESSAGE := FORMAT_TEXT('Загружено детей: %s', nLOAD_COUNT);
+  sMESSAGE := substr(FORMAT_TEXT('Загружено детей: %s', to_char(nLOAD_COUNT))||chr(10)||sMESSAGE, 1, 4000);
 end;
 /
 show errors;
