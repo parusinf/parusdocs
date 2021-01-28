@@ -6,6 +6,8 @@
 
 ![Обратите внимание на расположение файлов Паруса.](images/ust_parus_final_state.png)
 
+> _Внимательность — залог успеха!_
+
 ## Установка
 1. Скачайте дистрибутив [ПарусБалашиха.zip](https://yadi.sk/d/R9dFKBj0JBJvEA) или [ПарусКоролёв.zip](https://yadi.sk/d/fg2NYknKkZAikA) с каталогом `Parus` внутри.
 
