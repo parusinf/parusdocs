@@ -109,7 +109,7 @@
 
 ## Мобильное приложение
 
-1. Установите приложение **Табели посещаемости** [https://play.google.com/store/apps/details?id=ru.parusinf.timesheets](https://play.google.com/store/apps/details?id=ru.parusinf.timesheets)
+1. Установите приложение **Табели посещаемости** [https://github.com/parusinf/timesheets](https://github.com/parusinf/timesheets)
 2. Чтобы не вводить в приложении группы вручную, выгрузите их из Паруса: **Учёт, Табель посещаемости**, на группе, которую нужно выгрузить, правая кнопка мыши, **Обмен, Экспорт в файл**, укажите каталог на компьютере, куда выгружать `CSV файл` группы, пользовательская процедура **ВыгрузкаТабеля**.
 3. Передайте `CSV файл` на телефон через почту или Telegram.
 4. На телефоне откройте `CSV файл` приложением **Табели посещаемости** либо в самом приложении нажмите кнопку загрузки и выберите `CSV файл`.
@@ -117,4 +117,4 @@
 6. Передайте `CSV файл` на компьютер через почту или Telegram.
 7. Загрузите `CSV файл` в Парус: **Учёт, Табель посещаемости**, правая кнопка мыши, **Обмен, Импорт из файл**, укажите `CSV файл` на компьютере, который нужно загрузить, пользовательская процедура **ЗагрузкаТабеля**.
 
-> _Серверные объекты процедур импорта и экспорта `CSV файлов` табелей посещаемости: [https://raw.githubusercontent.com/parusinf/parusdocs/master/docs/assembly/parus_load_unload.sql](https://raw.githubusercontent.com/parusinf/parusdocs/master/docs/assembly/parus_load_unload.sql)_
+> _Серверные объекты процедур импорта и экспорта `CSV файлов` табелей посещаемости: [https://github.com/parusinf/timesheets/blob/master/lib/db/parus_load_unload.sql](https://github.com/parusinf/timesheets/blob/master/lib/db/parus_load_unload.sql)_
