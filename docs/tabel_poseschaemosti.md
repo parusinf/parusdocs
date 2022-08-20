@@ -111,7 +111,7 @@
 
 ### Установка приложения **Табели посещаемости**
 
-[https://github.com/parusinf/timesheets#23-установка](https://github.com/parusinf/timesheets#23-установка)
+[https://github.com/parusinf/timesheets#22-установка](https://github.com/parusinf/timesheets#22-установка)
 
 ### Получение табелей
 
