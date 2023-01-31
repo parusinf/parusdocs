@@ -5,8 +5,7 @@
 * [Количество ставок штатной должности по дням](docs/kolvo_stavok.md)
 * [Отзыв из отпуска](docs/otzyv_is_otpuska.md)
 * [Электронные трудовые книжки](docs/etk.md)
-* [СЗВ-М](docs/szv-m.md)
-* [СЗВ-СТАЖ](docs/szv-stazh.md)
+* [Персонифицированные сведения](docs/pers_sved.md)
 * [Работа по договору ГПХ](docs/gph.md)
 
 
